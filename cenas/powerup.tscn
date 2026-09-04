@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dpm3jnj25xv8u"]
+
+[ext_resource type="Script" uid="uid://cp817hix8mih3" path="res://script/velocidade.gd" id="1_wh0le"]
+[ext_resource type="Texture2D" uid="uid://di3r52eu3l3d1" path="res://fotos/icon.svg" id="2_6cuax"]
+[ext_resource type="Script" uid="uid://bm4j6au0qls5l" path="res://script/double_jump.gd" id="3_6cuax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_to7bl"]
+size = Vector2(26, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(26, 26)
+
+[node name="Power Ups" type="Node2D" unique_id=822247103]
+
+[node name="Velocidade" type="Area2D" parent="." unique_id=957017442]
+script = ExtResource("1_wh0le")
+
+[node name="Sprite2D" type="Sprite2D" parent="Velocidade" unique_id=551404957]
+position = Vector2(0.00024414063, 0)
+scale = Vector2(0.20312536, 0.20312497)
+texture = ExtResource("2_6cuax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Velocidade" unique_id=1165051628]
+position = Vector2(0, -0.00012207031)
+shape = SubResource("RectangleShape2D_to7bl")
+
+[node name="DoubleJump" type="Area2D" parent="." unique_id=454823774]
+script = ExtResource("3_6cuax")
+
+[node name="Sprite2D" type="Sprite2D" parent="DoubleJump" unique_id=503516465]
+position = Vector2(327, -0.99999905)
+scale = Vector2(0.20312501, 0.20312501)
+texture = ExtResource("2_6cuax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoubleJump" unique_id=1166945647]
+position = Vector2(327, -0.99999905)
+shape = SubResource("RectangleShape2D_bhunq")
+
+[connection signal="body_entered" from="Velocidade" to="Velocidade" method="_on_body_entered"]
+[connection signal="body_entered" from="DoubleJump" to="DoubleJump" method="_on_body_entered"]

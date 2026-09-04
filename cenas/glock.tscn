@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dx2tbbhsmmvum"]
+
+[ext_resource type="Script" uid="uid://dnbelftj74bsw" path="res://script/glock.gd" id="1_co21w"]
+[ext_resource type="Texture2D" uid="uid://cmoxr472s4nn3" path="res://fotos/Glock_17_MOD_45154998_(Transparent).png" id="2_hhc1l"]
+
+[node name="glock" type="Node2D" unique_id=337587135]
+visible = false
+script = ExtResource("1_co21w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=91778777]
+position = Vector2(99, 5.9604645e-08)
+scale = Vector2(0.081813425, 0.04995095)
+texture = ExtResource("2_hhc1l")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1585819668]
+position = Vector2(198, -29)

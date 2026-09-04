@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://ylpcx554i4ah"]
+
+[ext_resource type="Script" uid="uid://35in7ynqx3xp" path="res://script/character_body_2d.gd" id="1_5bf8w"]
+[ext_resource type="PackedScene" uid="uid://dx2tbbhsmmvum" path="res://cenas/glock.tscn" id="2_y0vhb"]
+[ext_resource type="Texture2D" uid="uid://dbu05pfo7rr7n" path="res://fotos/main.png" id="3_p3roy"]
+[ext_resource type="Texture2D" uid="uid://cxistrau6h4uy" path="res://fotos/chao.png" id="4_6slq4"]
+[ext_resource type="Texture2D" uid="uid://d046kdg84xlt4" path="res://fotos/parede.png" id="5_cjk60"]
+[ext_resource type="PackedScene" uid="uid://dpm3jnj25xv8u" path="res://cenas/powerup.tscn" id="6_7vmhx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(84.25, 77.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riqys"]
+size = Vector2(4252, 126.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn0t7"]
+size = Vector2(491, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f8o3"]
+size = Vector2(550, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1esiv"]
+size = Vector2(96, 482)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr0ht"]
+size = Vector2(96, 482)
+
+[node name="Node2D" type="Node2D" unique_id=221374815]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1103375818]
+position = Vector2(500, 1200)
+script = ExtResource("1_5bf8w")
+
+[node name="glock" parent="Player" unique_id=337587135 instance=ExtResource("2_y0vhb")]
+position = Vector2(-4, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=218822436]
+position = Vector2(-9.124995, 6.7499776)
+scale = Vector2(0.2808334, 0.2728875)
+texture = ExtResource("3_p3roy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1216222146]
+position = Vector2(-9.125, 6.875)
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1189310253]
+position = Vector2(-8, 7)
+limit_left = -75
+limit_right = 4310
+limit_bottom = 1550
+editor_draw_limits = true
+
+[node name="Chao" type="StaticBody2D" parent="." unique_id=144045316]
+
+[node name="Sprite2D" type="Sprite2D" parent="Chao" unique_id=1550178758]
+position = Vector2(2128, 1523.3125)
+scale = Vector2(14.173332, 0.44586238)
+texture = ExtResource("4_6slq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao" unique_id=66021048]
+position = Vector2(2128, 1523.25)
+shape = SubResource("RectangleShape2D_riqys")
+
+[node name="Plat1" type="StaticBody2D" parent="." unique_id=1318755302]
+
+[node name="ColorRect" type="ColorRect" parent="Plat1" unique_id=1894545153]
+offset_left = 965.0
+offset_top = 1240.0
+offset_right = 1456.0
+offset_bottom = 1292.0
+color = Color(0.060528167, 0.35265315, 0, 1)
+
+[node name="Plataforma1" type="CollisionShape2D" parent="Plat1" unique_id=689780594]
+position = Vector2(1210.5, 1266)
+shape = SubResource("RectangleShape2D_sn0t7")
+
+[node name="Plat2" type="StaticBody2D" parent="." unique_id=1596860891]
+
+[node name="ColorRect" type="ColorRect" parent="Plat2" unique_id=83297514]
+offset_left = 1644.0
+offset_top = 1334.0
+offset_right = 2195.0
+offset_bottom = 1381.0
+color = Color(0.09655058, 0.5626911, 1.92523e-07, 1)
+
+[node name="Plataforma2" type="CollisionShape2D" parent="Plat2" unique_id=2073146989]
+position = Vector2(1920, 1357.5)
+shape = SubResource("RectangleShape2D_6f8o3")
+
+[node name="ParedeEsquerda" type="StaticBody2D" parent="." unique_id=1655516472]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParedeEsquerda" unique_id=24772206]
+position = Vector2(-46, 1219)
+scale = Vector2(0.6760564, 0.5704143)
+texture = ExtResource("5_cjk60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeEsquerda" unique_id=662523854]
+position = Vector2(-46, 1219)
+shape = SubResource("RectangleShape2D_1esiv")
+
+[node name="ParedeDireita" type="StaticBody2D" parent="." unique_id=1638272322]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParedeDireita" unique_id=375390617]
+position = Vector2(4302, 1219.125)
+scale = Vector2(0.67605597, 0.5707102)
+texture = ExtResource("5_cjk60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeDireita" unique_id=208189250]
+position = Vector2(4302, 1219)
+shape = SubResource("RectangleShape2D_qr0ht")
+
+[node name="Node2D" parent="." unique_id=822247103 instance=ExtResource("6_7vmhx")]
+position = Vector2(2463, 1396)
