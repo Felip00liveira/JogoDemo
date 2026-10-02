@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -500.0
 var MAX_JUMPS: int = 1
 var jumps_done: int = 0
 var pudju = false
+var vida = Global.vidaPlayer
 
 func _physics_process(delta: float) -> void:
 	
@@ -30,7 +31,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	
+
+
+func morte_player():
+	if Global.vidaPlayer == 0:
+		Global.vidaPlayer = 3
+		get_tree().call_deferred("reload_current_scene")
+
 func puvelocidade():
 	var powerUpDuration = 5 
 	SPEED = 2000.0

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dpm3jnj25xv8u"]
 
 [ext_resource type="Script" uid="uid://cp817hix8mih3" path="res://script/velocidade.gd" id="1_wh0le"]
-[ext_resource type="Texture2D" uid="uid://di3r52eu3l3d1" path="res://fotos/icon.svg" id="2_6cuax"]
+[ext_resource type="Texture2D" uid="uid://dcmu0rrin024x" path="res://fotos/azul.png" id="2_pjn22"]
 [ext_resource type="Script" uid="uid://bm4j6au0qls5l" path="res://script/double_jump.gd" id="3_6cuax"]
+[ext_resource type="Texture2D" uid="uid://btdyjoffyy163" path="res://fotos/amarelo.png" id="4_t6ff0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_to7bl"]
 size = Vector2(26, 26)
@@ -16,9 +17,9 @@ size = Vector2(26, 26)
 script = ExtResource("1_wh0le")
 
 [node name="Sprite2D" type="Sprite2D" parent="Velocidade" unique_id=551404957]
-position = Vector2(0.00024414063, 0)
-scale = Vector2(0.20312536, 0.20312497)
-texture = ExtResource("2_6cuax")
+position = Vector2(-2.3841858e-07, 9.536743e-07)
+scale = Vector2(0.15568861, 0.15757576)
+texture = ExtResource("2_pjn22")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Velocidade" unique_id=1165051628]
 position = Vector2(0, -0.00012207031)
@@ -28,9 +29,9 @@ shape = SubResource("RectangleShape2D_to7bl")
 script = ExtResource("3_6cuax")
 
 [node name="Sprite2D" type="Sprite2D" parent="DoubleJump" unique_id=503516465]
-position = Vector2(327, -0.99999905)
-scale = Vector2(0.20312501, 0.20312501)
-texture = ExtResource("2_6cuax")
+position = Vector2(327, -0.9999999)
+scale = Vector2(0.15568858, 0.15757577)
+texture = ExtResource("4_t6ff0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoubleJump" unique_id=1166945647]
 position = Vector2(327, -0.99999905)

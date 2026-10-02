@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cxistrau6h4uy" path="res://fotos/chao.png" id="4_6slq4"]
 [ext_resource type="Texture2D" uid="uid://d046kdg84xlt4" path="res://fotos/parede.png" id="5_cjk60"]
 [ext_resource type="PackedScene" uid="uid://dpm3jnj25xv8u" path="res://cenas/powerup.tscn" id="6_7vmhx"]
+[ext_resource type="PackedScene" uid="uid://d3qvhlaajb28s" path="res://cenas/spike.tscn" id="7_rdqwu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(84.25, 77.75)
@@ -29,6 +30,7 @@ size = Vector2(96, 482)
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1103375818]
 position = Vector2(500, 1200)
+collision_mask = 17
 script = ExtResource("1_5bf8w")
 
 [node name="glock" parent="Player" unique_id=337587135 instance=ExtResource("2_y0vhb")]
@@ -111,3 +113,6 @@ shape = SubResource("RectangleShape2D_qr0ht")
 
 [node name="Node2D" parent="." unique_id=822247103 instance=ExtResource("6_7vmhx")]
 position = Vector2(2463, 1396)
+
+[node name="spikes" parent="." unique_id=1239516445 instance=ExtResource("7_rdqwu")]
+position = Vector2(3369, 1435)
