@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
 func morte_player():
 	if Global.vidaPlayer == 0:
-		Global.vidaPlayer = 3
+		Global.vidaPlayer = 100
 		get_tree().call_deferred("reload_current_scene")
 
 func puvelocidade():

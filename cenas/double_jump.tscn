@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bt03pwaw6cx8c"]
+
+[ext_resource type="Script" uid="uid://bm4j6au0qls5l" path="res://script/double_jump.gd" id="1_sikwx"]
+[ext_resource type="Texture2D" uid="uid://c701876qfi80e" path="res://fotos/tenismola.png" id="2_sikwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55dtu"]
+size = Vector2(44.000004, 42)
+
+[node name="DoubleJump" type="Node2D" unique_id=1240675478]
+
+[node name="DoubleJump" type="Area2D" parent="." unique_id=1095617422]
+script = ExtResource("1_sikwx")
+
+[node name="Sprite2D" type="Sprite2D" parent="DoubleJump" unique_id=1078873028]
+position = Vector2(9.536743e-07, -1.4305115e-06)
+scale = Vector2(0.10837439, 0.08171206)
+texture = ExtResource("2_sikwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoubleJump" unique_id=1827918402]
+shape = SubResource("RectangleShape2D_55dtu")
+
+[connection signal="body_entered" from="DoubleJump" to="DoubleJump" method="_on_body_entered"]

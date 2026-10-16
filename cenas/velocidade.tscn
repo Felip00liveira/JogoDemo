@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bows2g85cb4jv"]
+
+[ext_resource type="Script" uid="uid://cp817hix8mih3" path="res://script/velocidade.gd" id="1_nm4h2"]
+[ext_resource type="Texture2D" uid="uid://dcmu0rrin024x" path="res://fotos/azul.png" id="2_hv6uk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_to7bl"]
+size = Vector2(26, 26)
+
+[node name="Velocidade" type="Node2D" unique_id=822247103]
+
+[node name="Velocidade" type="Area2D" parent="." unique_id=957017442]
+script = ExtResource("1_nm4h2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Velocidade" unique_id=551404957]
+position = Vector2(-2.3841858e-07, 9.536743e-07)
+scale = Vector2(0.15568861, 0.15757576)
+texture = ExtResource("2_hv6uk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Velocidade" unique_id=1165051628]
+position = Vector2(0, -0.00012207031)
+shape = SubResource("RectangleShape2D_to7bl")
+
+[connection signal="body_entered" from="Velocidade" to="Velocidade" method="_on_body_entered"]
