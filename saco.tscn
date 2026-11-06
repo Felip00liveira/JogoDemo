@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dhwi6yr2u18t3"]
+
+[ext_resource type="Script" uid="uid://7krvmy55st1g" path="res://saco.gd" id="1_v1e8c"]
+[ext_resource type="Texture2D" uid="uid://ccfowu6qgp3a4" path="res://fotos/0x1900-000000-80-0-0.jpg" id="1_vms4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(176, 240)
+
+[node name="Saco" type="Node2D" unique_id=1180369167]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1684055307]
+script = ExtResource("1_v1e8c")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1867377257]
+position = Vector2(0, 1.5258789e-05)
+scale = Vector2(0.09263157, 0.12631579)
+texture = ExtResource("1_vms4l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1653125517]
+position = Vector2(-1.3552527e-20, -2.842171e-14)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_bhunq")

@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dyswia2pt87ti" path="res://fotos/hampterV4.png" id="12_qwphb"]
 [ext_resource type="PackedScene" uid="uid://bt03pwaw6cx8c" path="res://cenas/double_jump.tscn" id="13_hbj13"]
 [ext_resource type="Texture2D" uid="uid://47dgjk8u6xf6" path="res://fotos/hampterV5.png" id="13_wpkec"]
+[ext_resource type="PackedScene" uid="uid://dhwi6yr2u18t3" path="res://saco.tscn" id="16_wgn4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(84.25, 77.75)
@@ -68,6 +69,7 @@ collision_mask = 17
 script = ExtResource("1_kyqjv")
 
 [node name="glock" parent="Player" unique_id=337587135 instance=ExtResource("2_y0vhb")]
+visible = true
 position = Vector2(-4, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=218822436]
@@ -169,3 +171,6 @@ position = Vector2(2447, 1411)
 
 [node name="DoubleJump" parent="." unique_id=1240675478 instance=ExtResource("13_hbj13")]
 position = Vector2(2802, 1404)
+
+[node name="Saco" parent="." unique_id=1180369167 instance=ExtResource("16_wgn4r")]
+position = Vector2(120, 1347.53)

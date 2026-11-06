@@ -1,6 +1,7 @@
 extends Node
 
 var vidaPlayer = 100
+var vidaSaco = 1000
 
 func morte_player():
 	if Global.vidaPlayer <= 0:
