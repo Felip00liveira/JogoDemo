@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://dy4j8tvn2fdlf"]
 
-[node name="glock_item" type="Node2D" unique_id=930790]
+[ext_resource type="Script" uid="uid://cp6bvjmcgclob" path="res://script/glock_item.gd" id="1_8ljwp"]
+[ext_resource type="Texture2D" uid="uid://cmoxr472s4nn3" path="res://fotos/Glock_17_MOD_45154998_(Transparent).png" id="1_30pja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(48, 32)
+
+[node name="glock_item" type="Area2D" unique_id=1401232239]
+light_mask = 4
+visibility_layer = 4
+script = ExtResource("1_8ljwp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=319115836]
+position = Vector2(2.3841858e-07, 0)
+scale = Vector2(0.020125788, 0.02092871)
+texture = ExtResource("1_30pja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=148605334]
+shape = SubResource("RectangleShape2D_bhunq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

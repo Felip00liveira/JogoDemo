@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -500.0
 var MAX_JUMPS: int = 1
 var jumps_done: int = 0
 var pudju = false
+var arma_atual: Node2D = null
 
 func _physics_process(delta: float) -> void:
 	
@@ -40,3 +41,10 @@ func puvelocidade():
 func pudj():
 	pudju = true
 	MAX_JUMPS = 2
+
+func equipar_arma(cena_arma: PackedScene) -> void:
+	if arma_atual:
+		arma_atual.queue_free()  # troca a arma anterior
+	arma_atual = cena_arma.instantiate()
+	add_child(arma_atual)
+	arma_atual.position = Vector2(6, 8)  # mesma posição de antes

@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b12iy464g1acv" path="res://fotos/borda.png" id="14_sosws"]
 [ext_resource type="Texture2D" uid="uid://c701876qfi80e" path="res://fotos/tenismola.png" id="15_qwphb"]
 [ext_resource type="PackedScene" uid="uid://dhwi6yr2u18t3" path="res://saco.tscn" id="16_wgn4r"]
+[ext_resource type="PackedScene" uid="uid://dy4j8tvn2fdlf" path="res://glock_item.tscn" id="18_qwphb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qr0ht"]
 size = Vector2(96, 482)
@@ -200,3 +201,6 @@ position = Vector2(2802, 1404)
 
 [node name="Saco" parent="." unique_id=1180369167 instance=ExtResource("16_wgn4r")]
 position = Vector2(176, 1339.235)
+
+[node name="glock_item" parent="." unique_id=1401232239 instance=ExtResource("18_qwphb")]
+position = Vector2(1880, 1312)
