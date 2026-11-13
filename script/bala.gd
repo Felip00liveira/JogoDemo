@@ -1,6 +1,7 @@
+#refazer mais tarde essa parte, não gostei muito como ficou
 extends Node2D
 
-const SPEED: int = 2500
+const SPEED: int = 1500
 const dano: int = 25
 
 func _process(delta: float) -> void:

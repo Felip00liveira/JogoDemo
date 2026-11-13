@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ltinet0bjw5w" path="res://player.gd" id="1_kyqjv"]
 [ext_resource type="Script" uid="uid://bw4vm321yhn5v" path="res://script/game_manager.gd" id="1_mjwph"]
-[ext_resource type="PackedScene" uid="uid://dx2tbbhsmmvum" path="res://cenas/glock.tscn" id="2_y0vhb"]
 [ext_resource type="Texture2D" uid="uid://dbu05pfo7rr7n" path="res://fotos/main.png" id="3_p3roy"]
 [ext_resource type="Texture2D" uid="uid://cxistrau6h4uy" path="res://fotos/chao.png" id="4_6slq4"]
 [ext_resource type="Texture2D" uid="uid://d046kdg84xlt4" path="res://fotos/parede.png" id="5_cjk60"]
@@ -15,25 +14,27 @@
 [ext_resource type="Texture2D" uid="uid://dyswia2pt87ti" path="res://fotos/hampterV4.png" id="12_qwphb"]
 [ext_resource type="PackedScene" uid="uid://bt03pwaw6cx8c" path="res://cenas/double_jump.tscn" id="13_hbj13"]
 [ext_resource type="Texture2D" uid="uid://47dgjk8u6xf6" path="res://fotos/hampterV5.png" id="13_wpkec"]
+[ext_resource type="Texture2D" uid="uid://b12iy464g1acv" path="res://fotos/borda.png" id="14_sosws"]
+[ext_resource type="Texture2D" uid="uid://c701876qfi80e" path="res://fotos/tenismola.png" id="15_qwphb"]
 [ext_resource type="PackedScene" uid="uid://dhwi6yr2u18t3" path="res://saco.tscn" id="16_wgn4r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
-size = Vector2(84.25, 77.75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_riqys"]
-size = Vector2(4252, 126.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn0t7"]
-size = Vector2(491, 52)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f8o3"]
-size = Vector2(550, 47)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr0ht"]
+size = Vector2(96, 482)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1esiv"]
 size = Vector2(96, 482)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr0ht"]
-size = Vector2(96, 482)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f8o3"]
+size = Vector2(550, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn0t7"]
+size = Vector2(491, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riqys"]
+size = Vector2(4252, 126.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(84.25, 77.75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6f8o3"]
 animations = [{
@@ -63,14 +64,71 @@ animations = [{
 [node name="GameManager" type="Node2D" parent="." unique_id=756817346]
 script = ExtResource("1_mjwph")
 
+[node name="paredes" type="Node2D" parent="." unique_id=1557213138]
+
+[node name="ParedeDireita" type="StaticBody2D" parent="paredes" unique_id=1638272322]
+
+[node name="Sprite2D" type="Sprite2D" parent="paredes/ParedeDireita" unique_id=375390617]
+position = Vector2(4302, 1219.125)
+scale = Vector2(0.67605597, 0.5707102)
+texture = ExtResource("5_cjk60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/ParedeDireita" unique_id=208189250]
+position = Vector2(4302, 1219)
+shape = SubResource("RectangleShape2D_qr0ht")
+
+[node name="ParedeEsquerda" type="StaticBody2D" parent="paredes" unique_id=1655516472]
+
+[node name="Sprite2D" type="Sprite2D" parent="paredes/ParedeEsquerda" unique_id=24772206]
+position = Vector2(-46, 1219)
+scale = Vector2(0.6760564, 0.5704143)
+texture = ExtResource("5_cjk60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/ParedeEsquerda" unique_id=662523854]
+position = Vector2(-46, 1219)
+shape = SubResource("RectangleShape2D_1esiv")
+
+[node name="Plat2" type="StaticBody2D" parent="paredes" unique_id=1596860891]
+
+[node name="ColorRect" type="ColorRect" parent="paredes/Plat2" unique_id=83297514]
+offset_left = 1644.0
+offset_top = 1334.0
+offset_right = 2195.0
+offset_bottom = 1381.0
+color = Color(0.09655058, 0.5626911, 1.92523e-07, 1)
+
+[node name="Plataforma2" type="CollisionShape2D" parent="paredes/Plat2" unique_id=2073146989]
+position = Vector2(1920, 1357.5)
+shape = SubResource("RectangleShape2D_6f8o3")
+
+[node name="Plat1" type="StaticBody2D" parent="paredes" unique_id=1318755302]
+
+[node name="ColorRect" type="ColorRect" parent="paredes/Plat1" unique_id=1894545153]
+offset_left = 965.0
+offset_top = 1240.0
+offset_right = 1456.0
+offset_bottom = 1292.0
+color = Color(0.060528167, 0.35265315, 0, 1)
+
+[node name="Plataforma1" type="CollisionShape2D" parent="paredes/Plat1" unique_id=689780594]
+position = Vector2(1210.5, 1266)
+shape = SubResource("RectangleShape2D_sn0t7")
+
+[node name="Chao" type="StaticBody2D" parent="paredes" unique_id=144045316]
+
+[node name="Sprite2D" type="Sprite2D" parent="paredes/Chao" unique_id=1550178758]
+position = Vector2(2128, 1523.3125)
+scale = Vector2(14.173332, 0.44586238)
+texture = ExtResource("4_6slq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/Chao" unique_id=66021048]
+position = Vector2(2128, 1523.25)
+shape = SubResource("RectangleShape2D_riqys")
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1103375818]
 position = Vector2(500, 1200)
 collision_mask = 17
 script = ExtResource("1_kyqjv")
-
-[node name="glock" parent="Player" unique_id=337587135 instance=ExtResource("2_y0vhb")]
-visible = true
-position = Vector2(-4, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=218822436]
 position = Vector2(-9.124995, 6.7499776)
@@ -87,65 +145,6 @@ limit_left = -75
 limit_right = 4310
 limit_bottom = 1550
 editor_draw_limits = true
-
-[node name="Chao" type="StaticBody2D" parent="." unique_id=144045316]
-
-[node name="Sprite2D" type="Sprite2D" parent="Chao" unique_id=1550178758]
-position = Vector2(2128, 1523.3125)
-scale = Vector2(14.173332, 0.44586238)
-texture = ExtResource("4_6slq4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao" unique_id=66021048]
-position = Vector2(2128, 1523.25)
-shape = SubResource("RectangleShape2D_riqys")
-
-[node name="Plat1" type="StaticBody2D" parent="." unique_id=1318755302]
-
-[node name="ColorRect" type="ColorRect" parent="Plat1" unique_id=1894545153]
-offset_left = 965.0
-offset_top = 1240.0
-offset_right = 1456.0
-offset_bottom = 1292.0
-color = Color(0.060528167, 0.35265315, 0, 1)
-
-[node name="Plataforma1" type="CollisionShape2D" parent="Plat1" unique_id=689780594]
-position = Vector2(1210.5, 1266)
-shape = SubResource("RectangleShape2D_sn0t7")
-
-[node name="Plat2" type="StaticBody2D" parent="." unique_id=1596860891]
-
-[node name="ColorRect" type="ColorRect" parent="Plat2" unique_id=83297514]
-offset_left = 1644.0
-offset_top = 1334.0
-offset_right = 2195.0
-offset_bottom = 1381.0
-color = Color(0.09655058, 0.5626911, 1.92523e-07, 1)
-
-[node name="Plataforma2" type="CollisionShape2D" parent="Plat2" unique_id=2073146989]
-position = Vector2(1920, 1357.5)
-shape = SubResource("RectangleShape2D_6f8o3")
-
-[node name="ParedeEsquerda" type="StaticBody2D" parent="." unique_id=1655516472]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParedeEsquerda" unique_id=24772206]
-position = Vector2(-46, 1219)
-scale = Vector2(0.6760564, 0.5704143)
-texture = ExtResource("5_cjk60")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeEsquerda" unique_id=662523854]
-position = Vector2(-46, 1219)
-shape = SubResource("RectangleShape2D_1esiv")
-
-[node name="ParedeDireita" type="StaticBody2D" parent="." unique_id=1638272322]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParedeDireita" unique_id=375390617]
-position = Vector2(4302, 1219.125)
-scale = Vector2(0.67605597, 0.5707102)
-texture = ExtResource("5_cjk60")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeDireita" unique_id=208189250]
-position = Vector2(4302, 1219)
-shape = SubResource("RectangleShape2D_qr0ht")
 
 [node name="spikes" parent="." unique_id=1239516445 instance=ExtResource("7_rdqwu")]
 position = Vector2(3369, 1435)
@@ -164,7 +163,34 @@ offset_top = 100.0
 offset_right = 216.0
 offset_bottom = 123.0
 
-[node name="djpu" type="Sprite2D" parent="GUI" unique_id=492400683]
+[node name="powerup" type="HBoxContainer" parent="GUI" unique_id=569025798]
+anchors_preset = -1
+offset_left = 1101.0
+offset_top = 1.0
+offset_right = 1155.0
+offset_bottom = 51.0
+
+[node name="double_jump_hud" type="TextureRect" parent="GUI/powerup" unique_id=1229841365]
+custom_minimum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("14_sosws")
+expand_mode = 1
+
+[node name="double_jump_icone_hud" type="TextureRect" parent="GUI/powerup/double_jump_hud" unique_id=1870608]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_qwphb")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Velocidade" parent="." unique_id=822247103 instance=ExtResource("12_kyqjv")]
 position = Vector2(2447, 1411)
@@ -173,4 +199,4 @@ position = Vector2(2447, 1411)
 position = Vector2(2802, 1404)
 
 [node name="Saco" parent="." unique_id=1180369167 instance=ExtResource("16_wgn4r")]
-position = Vector2(120, 1347.53)
+position = Vector2(176, 1339.235)

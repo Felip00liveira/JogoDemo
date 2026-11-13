@@ -1,3 +1,4 @@
+#refazer mais tarde essa parte, não gostei muito como ficou
 extends StaticBody2D
 
 var dano_total: int = 0

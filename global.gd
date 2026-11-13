@@ -1,5 +1,7 @@
 extends Node
 
+signal powerup_coletado(nome: String)
+
 var vidaPlayer = 100
 var vidaSaco = 1000
 
