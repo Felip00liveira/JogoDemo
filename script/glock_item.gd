@@ -5,4 +5,5 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("equipar_arma"):
 		body.equipar_arma(cena_arma)
+		Global.powerup_coletado.emit("glock")
 		queue_free()

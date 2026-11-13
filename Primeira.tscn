@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d046kdg84xlt4" path="res://fotos/parede.png" id="5_cjk60"]
 [ext_resource type="PackedScene" uid="uid://d3qvhlaajb28s" path="res://cenas/spike.tscn" id="7_rdqwu"]
 [ext_resource type="Script" uid="uid://bsqi2vm7esex6" path="res://script/ui/gui.gd" id="8_kyqjv"]
+[ext_resource type="Texture2D" uid="uid://bi5i6y8o1mp5g" path="res://fotos/pressione_r_spritesheet.png" id="9_03ulh"]
 [ext_resource type="Texture2D" uid="uid://cwjemotsf3pev" path="res://fotos/hampterV1.png" id="9_n6ac6"]
 [ext_resource type="Texture2D" uid="uid://d1p3qge3bl4m4" path="res://fotos/hampterV2.png" id="10_wgn4r"]
 [ext_resource type="Texture2D" uid="uid://c5hnvu4teg536" path="res://fotos/hampterV3.png" id="11_sosws"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b12iy464g1acv" path="res://fotos/borda.png" id="14_sosws"]
 [ext_resource type="Texture2D" uid="uid://c701876qfi80e" path="res://fotos/tenismola.png" id="15_qwphb"]
 [ext_resource type="PackedScene" uid="uid://dhwi6yr2u18t3" path="res://saco.tscn" id="16_wgn4r"]
+[ext_resource type="Texture2D" uid="uid://cmoxr472s4nn3" path="res://fotos/Glock_17_MOD_45154998_(Transparent).png" id="16_wpkec"]
 [ext_resource type="PackedScene" uid="uid://dy4j8tvn2fdlf" path="res://glock_item.tscn" id="18_qwphb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qr0ht"]
@@ -36,6 +38,49 @@ size = Vector2(4252, 126.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(84.25, 77.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6v5g"]
+atlas = ExtResource("9_03ulh")
+region = Rect2(0, 0, 467, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6brv3"]
+atlas = ExtResource("9_03ulh")
+region = Rect2(467, 0, 467, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef0pc"]
+atlas = ExtResource("9_03ulh")
+region = Rect2(934, 0, 467, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_engyb"]
+atlas = ExtResource("9_03ulh")
+region = Rect2(1401, 0, 467, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrgbc"]
+atlas = ExtResource("9_03ulh")
+region = Rect2(1868, 0, 467, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_riqys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6v5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6brv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef0pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_engyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrgbc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 20.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6f8o3"]
 animations = [{
@@ -126,6 +171,9 @@ texture = ExtResource("4_6slq4")
 position = Vector2(2128, 1523.25)
 shape = SubResource("RectangleShape2D_riqys")
 
+[node name="glock_item" parent="." unique_id=1401232239 instance=ExtResource("18_qwphb")]
+position = Vector2(1880, 1312)
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1103375818]
 position = Vector2(500, 1200)
 collision_mask = 17
@@ -152,6 +200,12 @@ position = Vector2(3369, 1435)
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=610732085]
 script = ExtResource("8_kyqjv")
+
+[node name="restart_hud" type="AnimatedSprite2D" parent="GUI" unique_id=1887545716]
+position = Vector2(232, 496)
+sprite_frames = SubResource("SpriteFrames_riqys")
+frame = 1
+frame_progress = 0.4467693
 
 [node name="player_vida" type="AnimatedSprite2D" parent="GUI" unique_id=525634385]
 position = Vector2(87, 66)
@@ -193,6 +247,34 @@ texture = ExtResource("15_qwphb")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="armas" type="HBoxContainer" parent="GUI" unique_id=1016857803]
+offset_left = 551.0
+offset_top = 1.0
+offset_right = 601.0
+offset_bottom = 51.0
+
+[node name="glock_hud" type="TextureRect" parent="GUI/armas" unique_id=1441895182]
+custom_minimum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("14_sosws")
+expand_mode = 1
+
+[node name="glock_icone_hud" type="TextureRect" parent="GUI/armas/glock_hud" unique_id=208992243]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_wpkec")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Velocidade" parent="." unique_id=822247103 instance=ExtResource("12_kyqjv")]
 position = Vector2(2447, 1411)
 
@@ -201,6 +283,3 @@ position = Vector2(2802, 1404)
 
 [node name="Saco" parent="." unique_id=1180369167 instance=ExtResource("16_wgn4r")]
 position = Vector2(176, 1339.235)
-
-[node name="glock_item" parent="." unique_id=1401232239 instance=ExtResource("18_qwphb")]
-position = Vector2(1880, 1312)
