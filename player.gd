@@ -9,6 +9,9 @@ var MAX_JUMPS: int = 1
 var jumps_done: int = 0
 var pudju = false
 var arma_atual: Node2D = null
+const PISCADAS := 4          
+const TEMPO_PISCADA := 0.15  
+var invulneravel := false
 
 func _ready() -> void:
 	Global.player_morreu.connect(_on_morreu)
@@ -56,3 +59,27 @@ func equipar_arma(cena_arma: PackedScene) -> void:
 	add_child(arma_atual)
 	arma_atual.position = Vector2(6, 8)
 	arma_atual.show_behind_parent = true   # arma atrás do player
+
+func tomar_dano(quantidade: int) -> void:
+	if invulneravel or Global.morto:
+		return
+
+	Global.update_vida_player(-quantidade)
+	Global.morte_player()
+
+	if Global.morto:
+		modulate = Color.RED     # morreu: fica vermelho
+		return
+
+	invulneravel = true
+	modulate = Color.RED         # reação imediata ao dano
+
+	var t := create_tween()
+	for i in PISCADAS:
+		t.tween_property(self, "modulate", Color.WHITE, TEMPO_PISCADA)
+		t.tween_property(self, "modulate", Color.RED, TEMPO_PISCADA)
+	t.tween_property(self, "modulate", Color.WHITE, TEMPO_PISCADA)
+
+	await t.finished
+	modulate = Color.WHITE
+	invulneravel = false
