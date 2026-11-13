@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dhwi6yr2u18t3" path="res://saco.tscn" id="16_wgn4r"]
 [ext_resource type="Texture2D" uid="uid://cmoxr472s4nn3" path="res://fotos/Glock_17_MOD_45154998_(Transparent).png" id="16_wpkec"]
 [ext_resource type="PackedScene" uid="uid://dy4j8tvn2fdlf" path="res://glock_item.tscn" id="18_qwphb"]
+[ext_resource type="PackedScene" uid="uid://d152mwfnp87yx" path="res://inimigo.tscn" id="21_r6v5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qr0ht"]
 size = Vector2(96, 482)
@@ -31,10 +32,19 @@ size = Vector2(96, 482)
 size = Vector2(550, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn0t7"]
-size = Vector2(491, 52)
+size = Vector2(488, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r0jt"]
+size = Vector2(1216, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_riqys"]
 size = Vector2(4252, 126.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvofd"]
+size = Vector2(34, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyycw"]
+size = Vector2(40, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(84.25, 77.75)
@@ -157,8 +167,21 @@ offset_bottom = 1292.0
 color = Color(0.060528167, 0.35265315, 0, 1)
 
 [node name="Plataforma1" type="CollisionShape2D" parent="paredes/Plat1" unique_id=689780594]
-position = Vector2(1210.5, 1266)
+position = Vector2(1212, 1266)
 shape = SubResource("RectangleShape2D_sn0t7")
+
+[node name="Plat3" type="StaticBody2D" parent="paredes" unique_id=1466719270]
+
+[node name="ColorRect" type="ColorRect" parent="paredes/Plat3" unique_id=1891913437]
+offset_left = 1568.0
+offset_top = 1104.0
+offset_right = 2784.0
+offset_bottom = 1156.0
+color = Color(0.060528167, 0.35265315, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/Plat3" unique_id=191989252]
+position = Vector2(2176, 1130)
+shape = SubResource("RectangleShape2D_2r0jt")
 
 [node name="Chao" type="StaticBody2D" parent="paredes" unique_id=144045316]
 
@@ -170,6 +193,32 @@ texture = ExtResource("4_6slq4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/Chao" unique_id=66021048]
 position = Vector2(2128, 1523.25)
 shape = SubResource("RectangleShape2D_riqys")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="paredes" unique_id=475192832]
+
+[node name="ColorRect" type="ColorRect" parent="paredes/StaticBody2D" unique_id=2066343242]
+offset_left = 2750.0
+offset_top = 939.0
+offset_right = 2784.0
+offset_bottom = 1104.0
+color = Color(0.060528167, 0.35265315, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D" unique_id=1541291208]
+position = Vector2(2767, 1021.5)
+shape = SubResource("RectangleShape2D_xvofd")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="paredes" unique_id=637007748]
+
+[node name="ColorRect" type="ColorRect" parent="paredes/StaticBody2D2" unique_id=1373455343]
+offset_left = 1568.0
+offset_top = 1052.0
+offset_right = 1608.0
+offset_bottom = 1104.0
+color = Color(0.060528167, 0.35265315, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D2" unique_id=1816910428]
+position = Vector2(1588, 1078)
+shape = SubResource("RectangleShape2D_jyycw")
 
 [node name="glock_item" parent="." unique_id=1401232239 instance=ExtResource("18_qwphb")]
 position = Vector2(1880, 1312)
@@ -283,3 +332,9 @@ position = Vector2(2802, 1404)
 
 [node name="Saco" parent="." unique_id=1180369167 instance=ExtResource("16_wgn4r")]
 position = Vector2(176, 1339.235)
+
+[node name="inimigo" parent="." unique_id=215386466 instance=ExtResource("21_r6v5g")]
+position = Vector2(2635, 1024)
+alcance = 900.0
+intervalo_tiro = 1.2
+vida = 100

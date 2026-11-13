@@ -83,3 +83,6 @@ func tomar_dano(quantidade: int) -> void:
 	await t.finished
 	modulate = Color.WHITE
 	invulneravel = false
+
+func levar_dano(valor):
+	print("Player levou dano: ", valor)
