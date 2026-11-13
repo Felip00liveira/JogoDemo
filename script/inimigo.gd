@@ -4,7 +4,7 @@ extends StaticBody2D
 
 @export var alcance: float = 900.0        # distância máxima de visão (px)
 @export var intervalo_tiro: float = 1.2   # segundos entre tiros
-@export var vida: int = 100
+var vida: int = 100
 
 @onready var olho: RayCast2D = $RayCast2D
 @onready var muzzle: Marker2D = $Marker2D
